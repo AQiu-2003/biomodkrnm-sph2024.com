@@ -11,6 +11,7 @@ export default function Image({
       <NextImage
         src={src ?? ""}
         alt={alt ?? ""}
+        // @ts-expect-error god knows why ts complains
         height={500}
         {...props}
         className="rounded-xl"

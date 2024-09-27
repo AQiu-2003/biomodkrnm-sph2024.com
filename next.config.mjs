@@ -9,7 +9,13 @@ const nextConfig = {
   pageExtensions: ["tsx", "md", "mdx"],
   images: {
     unoptimized: true,
-  }
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "tuapi.eees.cc",
+      },
+    ],
+  },
 };
 
 const withMDX = createMDX({

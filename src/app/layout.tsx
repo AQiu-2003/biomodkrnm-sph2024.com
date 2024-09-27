@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
+import { websiteMetaData } from "@/data/websiteMetaData";
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-
 const space_grotesk = Space_Grotesk({
   subsets: ["latin"],
   display: "swap",
@@ -10,8 +10,8 @@ const space_grotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "KRNM-SPH",
-  description: "KRNM-SPH",
+  title: websiteMetaData.title,
+  description: websiteMetaData.description,
   icons: {
     icon: [
       { url: "/favicons/favicon.ico" },
@@ -42,9 +42,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${space_grotesk.variable}`}>
         <Header />
-        <article className="mt-10 prose dark:prose-invert lg:prose-xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+        <main className="mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           {children}
-        </article>
+        </main>
         {/* <Footer /> */}
       </body>
     </html>

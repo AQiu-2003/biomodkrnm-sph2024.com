@@ -7,6 +7,9 @@ import remarkUnwrapImages from "remark-unwrap-images";
 const nextConfig = {
   output: "export",
   pageExtensions: ["tsx", "md", "mdx"],
+  images: {
+    unoptimized: true,
+  }
 };
 
 const withMDX = createMDX({

@@ -15,7 +15,12 @@ const Card = ({ member }: { member: TeamMember }) => {
       />
 
       <div className='relative p-4 sm:p-5 lg:p-6'>
-        <p className='text-sm font-semibold uppercase tracking-widest text-blue-500'>
+        <p
+          className='text-sm font-semibold uppercase tracking-widest text-blue-400'
+          style={{
+            textShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+          }}
+        >
           {member.role}
         </p>
 

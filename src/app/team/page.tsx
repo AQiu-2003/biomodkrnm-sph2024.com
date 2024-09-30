@@ -12,7 +12,7 @@ export default function TeamPage() {
         ))}
       </div>
       <h1 className='mt-8 text-4xl font-bold'>Faculty Mentors</h1>
-      <div className='w-full mt-8 prose max-w-none'>
+      <div className='w-full prose max-w-none'>
         <FacultyMentors />
       </div>
     </div>

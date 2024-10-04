@@ -1,18 +1,22 @@
-import createMDX from "@next/mdx";
-import rehypeMdxImportMedia from "rehype-mdx-import-media";
-import rehypeSlug from "rehype-slug";
-import remarkUnwrapImages from "remark-unwrap-images";
+import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
+import createMDX from '@next/mdx';
+import rehypeMdxImportMedia from 'rehype-mdx-import-media';
+import rehypeSlug from 'rehype-slug';
+import remarkUnwrapImages from 'remark-unwrap-images';
+
+if (process.env.NODE_ENV === 'development') {
+  await setupDevPlatform();
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  pageExtensions: ["tsx", "md", "mdx"],
+  pageExtensions: ['tsx', 'md', 'mdx'],
   images: {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "tuapi.eees.cc",
+        protocol: 'https',
+        hostname: 'tuapi.eees.cc',
       },
     ],
   },

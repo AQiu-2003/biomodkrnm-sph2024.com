@@ -22,32 +22,35 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
   return (
     <header className='sticky top-0 z-50 bg-sky-900 bg-opacity-80 shadow-md backdrop-blur-md dark:bg-gray-800'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between py-6'>
+        <div className='group flex items-center justify-between py-6'>
           <Link className='flex items-center' href='/'>
             <Image
               src={websiteMetaData.logo}
               alt='Logo'
               width={40}
               height={40}
-              className='drop-shadow-md'
+              className='group-hover:scale-x-[-1] drop-shadow-md transition-transform duration-500 ease-in-out'
             />
-            <span className='ml-2 text-2xl font-bold text-white sha'>
+            <span className='ml-2 text-2xl font-bold text-white'>
               {websiteMetaData.title}
             </span>
           </Link>
           <div className='flex items-center'>
             <nav className='mr-6 hidden space-x-6 md:flex'>
               {headerNavItems.map((item) => (
-                <div key={item.name} className='relative'>
+                <div
+                  key={item.name}
+                  className='relative transition-all duration-300 hover:scale-110 hover:drop-shadow-lg active:scale-95'
+                >
                   {item.children ? (
                     <DropdownMenu item={item} isActive={isActive(item.href)} />
                   ) : (
                     <Link
                       href={item.href}
-                      className={`text-lg ${
+                      className={`text-lg font-medium tracking-widest ${
                         isActive(item.href)
-                          ? 'text-sky-200 border-b-2 border-sky-200'
-                          : 'text-white hover:text-gray-300 dark:text-gray-300 dark:hover:text-white'
+                          ? 'border-b-2 border-sky-200 text-sky-200'
+                          : 'widest text-white hover:text-gray-300 dark:text-gray-300 dark:hover:text-white'
                       }`}
                     >
                       {item.name}

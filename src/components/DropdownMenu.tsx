@@ -19,10 +19,10 @@ export default function DropdownMenu({ item, isActive }: DropdownMenuProps) {
     >
       <Link
         href={item.href}
-        className={`text-lg ${
+        className={`text-lg font-medium tracking-widest ${
           isActive
             ? 'border-b-2 border-sky-200 text-sky-200'
-            : 'text-white hover:text-gray-300 dark:text-gray-300 dark:hover:text-white'
+            : 'widest text-white hover:text-gray-300 dark:text-gray-300 dark:hover:text-white'
         }`}
       >
         {item.name}
@@ -45,7 +45,7 @@ export default function DropdownMenu({ item, isActive }: DropdownMenuProps) {
                 <Link
                   key={child.name}
                   href={child.href}
-                  className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
+                  className='block px-4 py-2 text-sm font-medium tracking-widest text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white'
                 >
                   {child.name}
                 </Link>

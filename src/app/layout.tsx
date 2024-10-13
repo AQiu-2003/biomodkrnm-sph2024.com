@@ -1,14 +1,14 @@
 import LayoutWrapper from '@/components/LayoutWrapper';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import Footer from '@/components/Footer';
 import { websiteMetaData } from '@/data/websiteMetaData';
 import { Metadata } from 'next';
-import { Space_Grotesk } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import './globals.css';
 
-const space_grotesk = Space_Grotesk({
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-space-grotesk',
 });
 
 export const metadata: Metadata = {
@@ -42,15 +42,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${space_grotesk.variable}`}>
+      <body className={roboto.className}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          <div className='min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100'>
+          <div className='flex min-h-screen flex-col bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100'>
             <LayoutWrapper>
-              <main className='mx-auto mt-10 max-w-7xl px-4 sm:px-6 lg:px-8'>
+              <main className='mx-auto mt-10 max-w-6xl flex-grow px-4 sm:px-6 lg:px-8'>
                 {children}
               </main>
             </LayoutWrapper>
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </ThemeProvider>
       </body>

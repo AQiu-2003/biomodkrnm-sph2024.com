@@ -18,15 +18,15 @@ function HeadingWrapper({
         className={`group relative ${Component === 'h2' ? 'mb-1 lg:mb-1' : ''}`}
         {...otherProps}
       >
-        {id && (
+        {id && Component !== 'h1' && (
           <>
             <div id={id} className='anchor relative -top-32' />
             <a
               href={`#${id}`}
-              className='absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100'
+              className='absolute -left-4 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100 lg:-left-8'
               aria-label={`Link to ${props.children}`}
             >
-              <LinkIcon className='h-4 w-4' />
+              <LinkIcon className='h-3 w-3 lg:h-5 lg:w-5' />
             </a>
           </>
         )}

@@ -1,7 +1,7 @@
 import TeamMemberCard from '@/components/TeamMemberCard';
 import { teamMembers } from '@/data/teamInfo';
 import FacultyMentors from '@/data/faculty-mentors.mdx';
-import * as motion from "framer-motion/client"
+import * as motion from 'framer-motion/client';
 
 export default function TeamPage() {
   return (
@@ -20,7 +20,7 @@ export default function TeamPage() {
         ))}
       </div>
       <h1 className='mt-8 text-4xl font-bold'>Faculty Mentors</h1>
-      <div className='prose w-full max-w-none'>
+      <div className='prose w-full max-w-none dark:prose-invert'>
         <FacultyMentors />
       </div>
     </div>

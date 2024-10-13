@@ -11,15 +11,7 @@ if (process.env.NODE_ENV === 'development') {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['tsx', 'md', 'mdx'],
-  images: {
-    unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'tuapi.eees.cc',
-      },
-    ],
-  },
+  images: {},
 };
 
 const withMDX = createMDX({

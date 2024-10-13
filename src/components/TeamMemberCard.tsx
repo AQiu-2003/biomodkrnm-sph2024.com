@@ -1,6 +1,5 @@
-import React from 'react';
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/solid';
 import { TeamMember } from '@/data/teamInfo';
+import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 
 const Card = ({ member }: { member: TeamMember }) => {

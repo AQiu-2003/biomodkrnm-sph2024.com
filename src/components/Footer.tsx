@@ -11,11 +11,11 @@ const Footer = () => {
               Copyright &copy; {new Date().getFullYear()}{' '}
               {websiteMetaData.title} All rights reserved. Developed by
               <Link
-                href='https://github.com/AQiu-2003'
+                href={websiteMetaData.developer.github}
                 target='_blank'
                 className='ml-1 text-sky-400 hover:text-sky-800'
               >
-                Aki Xiang
+                {websiteMetaData.developer.name}
               </Link>
               .
             </p>
@@ -23,7 +23,7 @@ const Footer = () => {
           <div className='flex gap-2'>
             <p>Contact us:</p>
             <a
-              href='mailto:contact@example.com'
+              href={`mailto:${websiteMetaData.contactEmail}`}
               className='text-sky-400 hover:text-sky-800'
             >
               {websiteMetaData.contactEmail}

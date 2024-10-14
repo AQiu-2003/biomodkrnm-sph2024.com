@@ -19,16 +19,16 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
   };
 
   return (
-    <header className='sticky top-0 z-50 bg-sky-900 bg-opacity-80 shadow-md backdrop-blur-md dark:bg-gray-800'>
+    <header className='sticky top-0 z-50 bg-sky-900 bg-opacity-80 shadow-md backdrop-blur-md dark:bg-sky-950'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='group flex items-center justify-between py-6'>
-          <Link className='flex items-center' href='/'>
+        <div className='flex items-center justify-between py-6'>
+          <Link className='group flex items-center' href='/'>
             <Image
               src={websiteMetaData.logo}
               alt='Logo'
               width={40}
               height={40}
-              className='group-hover:scale-x-[-1] drop-shadow-md transition-transform duration-500 ease-in-out'
+              className='drop-shadow-md transition-transform duration-500 ease-in-out group-hover:scale-x-[-1]'
             />
             <span className='ml-2 text-2xl font-bold text-white'>
               {websiteMetaData.title}

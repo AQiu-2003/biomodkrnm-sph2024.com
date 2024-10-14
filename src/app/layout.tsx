@@ -1,6 +1,9 @@
-import LayoutWrapper from '@/components/LayoutWrapper';
-import { ThemeProvider } from '@/components/ThemeProvider';
+import FixedBottomRightWrapper from '@/components/FixedBottomRightWrapper';
 import Footer from '@/components/Footer';
+import LayoutWrapper from '@/components/LayoutWrapper';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import ThemeToggle from '@/components/ThemeToggle';
 import { websiteMetaData } from '@/data/websiteMetaData';
 import { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
@@ -51,6 +54,10 @@ export default function RootLayout({
               </main>
             </LayoutWrapper>
             <Footer />
+            <FixedBottomRightWrapper>
+              <ScrollToTopButton />
+              <ThemeToggle />
+            </FixedBottomRightWrapper>
           </div>
         </ThemeProvider>
       </body>

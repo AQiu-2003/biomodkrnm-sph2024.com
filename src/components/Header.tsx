@@ -1,6 +1,5 @@
 'use client';
 import DropdownMenu from '@/components/DropdownMenu';
-import ThemeToggle from '@/components/ThemeToggle';
 import { headerNavItems } from '@/data/headerConfig';
 import { websiteMetaData } from '@/data/websiteMetaData';
 import { Bars3Icon } from '@heroicons/react/24/outline';
@@ -59,7 +58,6 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
                 </div>
               ))}
             </nav>
-            <ThemeToggle />
             <div className='ml-4 md:hidden'>
               <button
                 className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'

@@ -10,7 +10,7 @@ if (process.env.NODE_ENV === 'development') {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['tsx', 'md', 'mdx'],
+  pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   images: {},
 };
 

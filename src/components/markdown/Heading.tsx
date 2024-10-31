@@ -20,7 +20,7 @@ function HeadingWrapper({
       >
         {id && Component !== 'h1' && (
           <>
-            <div id={id} className='anchor relative -top-32' />
+            <div id={id} className='anchor absolute -top-24' />
             <a
               href={`#${id}`}
               className='absolute -left-4 top-1/2 -translate-y-1/2 opacity-0 transition-opacity group-hover:opacity-100 lg:-left-8'

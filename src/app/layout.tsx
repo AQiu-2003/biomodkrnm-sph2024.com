@@ -49,7 +49,7 @@ export default function RootLayout({
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
           <div className='flex min-h-screen flex-col bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100'>
             <LayoutWrapper>
-              <main className='mx-auto mt-10 max-w-6xl flex-grow px-4 sm:px-6 lg:px-8'>
+              <main className='mx-auto mt-10 max-w-7xl flex-grow px-4 sm:px-6 lg:px-8'>
                 {children}
               </main>
             </LayoutWrapper>

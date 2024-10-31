@@ -7,9 +7,9 @@ export default function MarkdownLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto flex max-w-7xl gap-8 px-4">
+    <div className='mx-auto flex max-w-7xl gap-8 lg:px-4'>
       <TableOfContents />
-      <article className="prose flex-1 max-w-none lg:prose-xl dark:prose-invert lg:ml-64 p-10 bg-white dark:bg-gray-800 rounded-xl shadow-lg transition-shadow duration-300 hover:shadow-xl">
+      <article className='prose max-w-none flex-1 rounded-xl bg-white p-5 lg:p-10 transition-shadow duration-300 dark:prose-invert lg:prose-xl dark:bg-gray-800 lg:ml-64 lg:shadow-lg lg:hover:shadow-xl'>
         {children}
       </article>
     </div>

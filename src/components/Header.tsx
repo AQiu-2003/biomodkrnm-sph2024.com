@@ -21,7 +21,7 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
   return (
     <header className='sticky top-0 z-50 bg-sky-900 bg-opacity-80 shadow-md backdrop-blur-md dark:bg-sky-950'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between py-6'>
+        <div className='flex items-center justify-between py-4 lg:py-6'>
           <Link className='group flex items-center' href='/'>
             <Image
               src={websiteMetaData.logo}
@@ -35,7 +35,7 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
             </span>
           </Link>
           <div className='flex items-center'>
-            <nav className='mr-6 hidden space-x-6 md:flex'>
+            <nav className='mr-6 hidden space-x-6 lg:flex'>
               {headerNavItems.map((item) => (
                 <div
                   key={item.name}
@@ -58,9 +58,9 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
                 </div>
               ))}
             </nav>
-            <div className='ml-4 md:hidden'>
+            <div className='ml-4 lg:hidden'>
               <button
-                className='inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'
+                className='inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500'
                 onClick={() => setMobileMenuOpen(true)}
               >
                 <span className='sr-only'>Open main menu</span>

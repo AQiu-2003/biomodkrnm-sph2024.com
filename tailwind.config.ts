@@ -7,7 +7,7 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class', // 启用 class 策略的深色模式
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {

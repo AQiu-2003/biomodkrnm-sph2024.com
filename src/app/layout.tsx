@@ -46,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={roboto.className}>
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+        <ThemeProvider attribute='class' defaultTheme='light' enableSystem>
           <div className='flex min-h-screen flex-col bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100'>
             <LayoutWrapper>
               <main className='mx-auto mt-10 max-w-7xl flex-grow px-4 sm:px-6 lg:px-8'>

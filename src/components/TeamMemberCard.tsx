@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Card = ({ member }: { member: TeamMember }) => {
   return (
-    <div className='group relative block h-[18rem] overflow-hidden rounded-lg bg-black sm:h-[25rem] lg:h-[30rem]'>
+    <div className='group relative block  overflow-hidden rounded-lg bg-black h-[25rem] lg:h-[30rem]'>
       <Image
         alt={member.name1}
         src={member.imageUrl || 'https://via.placeholder.com/300'}
@@ -15,19 +15,23 @@ const Card = ({ member }: { member: TeamMember }) => {
 
       <div className='relative flex h-full flex-col justify-between p-4 sm:p-5 lg:p-6'>
         <div>
-          <p
-            className='text-sm font-semibold uppercase tracking-widest text-blue-400'
-            style={{
-              textShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
-            }}
-          >
-            {member.role}
-          </p>
-
-          <p className='text-xl font-bold text-white sm:text-2xl'>
+          <p className='mb-2 text-xl font-bold text-white sm:text-2xl'>
             {member.name1}
             {member.name2 && ` / ${member.name2}`}
           </p>
+          <div className='flex flex-wrap gap-2 opacity-0 transition-opacity group-hover:opacity-100'>
+            {member.role.map((role, index) => (
+              <span
+                key={index}
+                className='inline-flex items-center rounded-full bg-blue-400/80 px-3 py-1 text-xs font-semibold text-white'
+                style={{
+                  textShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
+                }}
+              >
+                {role}
+              </span>
+            ))}
+          </div>
         </div>
 
         <div className='transform opacity-0 transition-all group-hover:opacity-100'>

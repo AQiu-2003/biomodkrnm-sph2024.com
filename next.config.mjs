@@ -11,7 +11,11 @@ if (process.env.NODE_ENV === 'development') {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
-  images: {},
+  images: {
+    remotePatterns: [
+      // 如果需要远程图片
+    ],
+  },
 };
 
 const withMDX = createMDX({

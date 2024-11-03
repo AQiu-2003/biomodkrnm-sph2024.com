@@ -13,7 +13,7 @@ function HeadingWrapper({
   const otherProps = omit(props, ['id']);
 
   return (
-    <div className={`${Component === 'h1' ? 'text-center' : ''}`}>
+    <div className={`${Component === 'h1' ? `text-center` : ''}`}>
       <Component
         className={`group relative ${Component === 'h2' ? 'mb-1 lg:mb-1' : ''}`}
         {...otherProps}

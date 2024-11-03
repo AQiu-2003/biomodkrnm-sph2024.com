@@ -22,8 +22,8 @@ export const headerNavItems: HeaderNavItem[] = [
         href: "/project#problem",
       },
       {
-        name: "Challenges",
-        href: "/project#challenges",
+        name: "Challenge",
+        href: "/project#challenge",
       },
       {
         name: "Solution",

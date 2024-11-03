@@ -16,16 +16,16 @@
   },
   "dependencies": {
     "@cloudflare/next-on-pages": "^1.13.5",
-    "@headlessui/react": "^2.1.10",
+    "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.1.5",
-    "@mdx-js/loader": "^3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.15",
-    "@types/lodash": "^4.17.10",
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^14.2.16",
+    "@types/lodash": "^4.17.13",
     "@types/mdx": "^2.0.13",
-    "ai": "^3.4.9",
+    "ai": "^3.4.31",
     "eslint-plugin-next-on-pages": "^1.13.5",
-    "framer-motion": "^11.11.8",
+    "framer-motion": "^11.11.11",
     "lodash": "^4.17.21",
     "next": "14.2.15",
     "next-themes": "^0.3.0",
@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
-    "@types/node": "^20.16.11",
-    "@types/react": "^18.3.11",
+    "@types/node": "^20.17.6",
+    "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "eslint": "^8.57.1",
     "eslint-config-next": "14.2.13",
@@ -47,9 +47,9 @@
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
-    "tailwindcss": "^3.4.13",
+    "tailwindcss": "^3.4.14",
     "typescript": "^5.6.3",
-    "wrangler": "^3.80.4"
+    "wrangler": "^3.84.1"
   },
   "resolutions": {
     "string-width": "4.2.3"

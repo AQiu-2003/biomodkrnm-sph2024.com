@@ -16,7 +16,7 @@ export interface Mentor {
   department: string;
   imageUrl: StaticImageData;
   email?: string;
-  type: 'professor' | 'senior';  // 添加类型字段
+  type: 'professor' | 'senior'; // 添加类型字段
 }
 
 export const professors: Mentor[] = [
@@ -54,6 +54,7 @@ export const professors: Mentor[] = [
   },
   {
     name1: 'Guofan Su',
+    name2: '苏国范',
     title: 'Associate Professor',
     department: 'NHC Key Laboratory of Radiobiology',
     imageUrl: GuofanSuPhoto,
@@ -61,6 +62,7 @@ export const professors: Mentor[] = [
   },
   {
     name1: 'Hexuan Leng',
+    name2: '冷贺璇',
     title: 'Lecturer',
     department: 'NHC Key Laboratory of Radiobiology',
     imageUrl: HexuanLengPhoto,
@@ -73,7 +75,8 @@ export const seniors: Mentor[] = [
     name1: 'Junxuan Yi',
     name2: '衣峻萱',
     title: 'Postdoc',
-    department: 'Southern Medical University, NHC Key Laboratory of Radiobiology',
+    department:
+      'Southern Medical University, NHC Key Laboratory of Radiobiology',
     imageUrl: JunxuanYiPhoto,
     type: 'senior',
   },

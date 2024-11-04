@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Card = ({ member }: { member: TeamMember }) => {
   return (
-    <div className='group relative block  overflow-hidden rounded-lg bg-black h-[25rem] lg:h-[30rem]'>
+    <div className='group relative block h-[25rem] overflow-hidden rounded-lg bg-black lg:h-[30rem]'>
       <Image
         alt={member.name1}
         src={member.imageUrl || 'https://via.placeholder.com/300'}
@@ -15,9 +15,11 @@ const Card = ({ member }: { member: TeamMember }) => {
 
       <div className='relative flex h-full flex-col justify-between p-4 sm:p-5 lg:p-6'>
         <div>
-          <p className='mb-2 text-xl font-bold text-white sm:text-2xl'>
+          <p className='mb-1 text-lg font-bold text-white sm:text-xl'>
             {member.name1}
-            {member.name2 && ` / ${member.name2}`}
+          </p>
+          <p className='mb-2 text-xl font-bold text-white sm:text-2xl'>
+            {member.name2}
           </p>
           <div className='flex flex-wrap gap-2 opacity-0 transition-opacity group-hover:opacity-100'>
             {member.role.map((role, index) => (

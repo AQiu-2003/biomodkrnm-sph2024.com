@@ -15,7 +15,7 @@ const righteous = Righteous({
 export default function TeamPage() {
   return (
     <div className='mb-12 flex min-h-screen flex-col items-center justify-center'>
-      <div className='relative h-[800px] w-full overflow-hidden rounded-lg'>
+      <div className='relative h-[400px] w-full overflow-hidden rounded-lg lg:h-[800px]'>
         <motion.div
           className='absolute inset-0 z-0 h-full w-full'
           initial={{ opacity: 0 }}

@@ -17,7 +17,9 @@ const MentorCard = ({ mentor }: { mentor: Mentor }) => {
         <div>
           <p className='mb-1 text-lg font-bold text-white sm:text-xl'>
             {mentor.name1}
-            {mentor.name2 && ` / ${mentor.name2}`}
+          </p>
+          <p className='mb-2 text-xl font-bold text-white sm:text-2xl'>
+            {mentor.name2}
           </p>
           <div className='flex flex-wrap gap-1.5 opacity-0 transition-opacity group-hover:opacity-100'>
             <span
@@ -32,7 +34,9 @@ const MentorCard = ({ mentor }: { mentor: Mentor }) => {
         </div>
 
         <div className='transform opacity-0 transition-all group-hover:opacity-100'>
-          <p className='mb-2 text-xs text-white sm:text-sm'>{mentor.department}</p>
+          <p className='mb-2 text-xs text-white sm:text-sm'>
+            {mentor.department}
+          </p>
           <div className='flex space-x-2'>
             {mentor.email && (
               <a
@@ -50,4 +54,4 @@ const MentorCard = ({ mentor }: { mentor: Mentor }) => {
   );
 };
 
-export default MentorCard; 
+export default MentorCard;

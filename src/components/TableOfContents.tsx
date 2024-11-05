@@ -105,7 +105,7 @@ export default function TableOfContents() {
               <div
                 key={index}
                 className='h-4 rounded bg-gray-200 dark:bg-gray-700'
-                style={{ width: `${Math.random() * 30 + 70}%` }}
+                style={{ width: `${70 + (index * 5)}%` }}
               />
             ))}
           </div>

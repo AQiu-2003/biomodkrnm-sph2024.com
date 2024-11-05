@@ -1,6 +1,7 @@
 import FixedBottomRightWrapper from '@/components/FixedBottomRightWrapper';
 import Footer from '@/components/Footer';
 import LayoutWrapper from '@/components/LayoutWrapper';
+import ParticlesBackground from '@/components/ParticlesBackground';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ThemeToggle from '@/components/ThemeToggle';
@@ -46,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={roboto.className}>
+        <ParticlesBackground />
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem>
           <div className='flex min-h-screen flex-col bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100'>
             <LayoutWrapper>

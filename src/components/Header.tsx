@@ -3,9 +3,16 @@ import DropdownMenu from '@/components/DropdownMenu';
 import { headerNavItems } from '@/data/headerConfig';
 import { websiteMetaData } from '@/data/websiteMetaData';
 import { Bars3Icon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
+import { Righteous } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
+const righteous = Righteous({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 interface HeaderProps {
   setMobileMenuOpen: (isOpen: boolean) => void;
@@ -19,20 +26,42 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
   };
 
   return (
-    <header className='sticky top-0 z-50 bg-sky-900 bg-opacity-80 shadow-md backdrop-blur-md dark:bg-sky-950'>
+    <header
+      className={`sticky top-0 z-50 bg-sky-900 bg-opacity-80 shadow-md backdrop-blur-md dark:bg-sky-950 ${righteous.className}`}
+    >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between py-4 lg:py-6'>
-          <Link className='group flex items-center' href='/'>
-            <Image
-              src={websiteMetaData.logo}
-              alt='Logo'
-              width={40}
-              height={40}
-              className='drop-shadow-md transition-transform duration-500 ease-in-out group-hover:scale-x-[-1]'
-            />
-            <span className='ml-2 text-2xl font-bold text-white'>
+        <div className='flex items-center justify-between py-2 lg:py-4'>
+          <Link className='flex items-center' href='/'>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{
+                rotate: 360,
+                transition: { duration: 0.5 },
+              }}
+            >
+              <Image
+                src={websiteMetaData.logo}
+                alt='Logo'
+                width={50}
+                height={50}
+                className='drop-shadow-md transition-transform duration-500 ease-in-out'
+              />
+            </motion.div>
+            <motion.div
+              className={`${righteous.className} ml-2 text-center text-2xl font-bold text-white drop-shadow-lg`}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{
+                scale: 1.05,
+                textShadow: '0px 0px 20px rgba(255,255,255,0.8)',
+                transition: { duration: 0.2 },
+              }}
+            >
               {websiteMetaData.title}
-            </span>
+            </motion.div>
           </Link>
           <div className='flex items-center'>
             <nav className='mr-6 hidden space-x-6 lg:flex'>
@@ -46,7 +75,7 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`text-lg font-medium tracking-widest ${
+                      className={`text-xl font-medium tracking-widest ${
                         isActive(item.href)
                           ? 'border-b-2 border-sky-200 text-sky-200'
                           : 'widest text-white hover:text-gray-300 dark:text-gray-300 dark:hover:text-white'

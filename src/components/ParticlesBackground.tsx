@@ -28,6 +28,7 @@ export default function ParticlesBackground() {
         id="tsparticles"
         // @ts-expect-error god knows why
         options={options}
+        className="hidden lg:block"
       />
     );
   }

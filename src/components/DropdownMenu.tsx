@@ -19,7 +19,7 @@ export default function DropdownMenu({ item, isActive }: DropdownMenuProps) {
     >
       <Link
         href={item.href}
-        className={`text-lg font-medium tracking-widest ${
+        className={`text-xl font-medium tracking-widest ${
           isActive
             ? 'border-b-2 border-sky-200 text-sky-200'
             : 'widest text-white hover:text-gray-300 dark:text-gray-300 dark:hover:text-white'

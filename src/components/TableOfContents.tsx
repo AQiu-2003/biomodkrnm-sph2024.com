@@ -113,14 +113,14 @@ export default function TableOfContents() {
       ) : (
         <nav className='hidden lg:block'>
           <div className='fixed top-1/2 max-h-[calc(100vh-8rem)] w-56 -translate-y-1/2 overflow-auto pr-4 transition-all duration-300 ease-in-out'>
-            <h3 className='mb-4 text-center text-lg font-bold text-gray-900 dark:text-gray-100'>
+            <h3 className='mb-4 text-center text-xl font-bold text-gray-900 dark:text-gray-100 pointer-events-none'>
               Table of Contents
             </h3>
-            <ul className='space-y-2 text-sm'>
+            <ul className='space-y-2 text-base'>
               {headings.map((heading) => (
                 <li
                   key={heading.id}
-                  style={{ paddingLeft: `${(heading.level - 1) * 1}rem` }}
+                  style={{ paddingLeft: `${(heading.level - 2) * 1}rem` }}
                   className='transform transition-all duration-200 hover:translate-x-1'
                 >
                   <a

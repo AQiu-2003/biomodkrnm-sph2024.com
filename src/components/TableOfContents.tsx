@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
+import { useCallback, useEffect, useState } from 'react';
 
 interface TOCItem {
   id: string;
@@ -98,48 +98,34 @@ export default function TableOfContents() {
 
   return (
     <nav className='hidden lg:block'>
-      {isLoading ? (
-        <div className='fixed top-1/2 max-h-[calc(100vh-8rem)] w-56 -translate-y-1/2 overflow-auto pr-4'>
-          <div className='animate-pulse space-y-2'>
-            {[...Array(5)].map((_, index) => (
-              <div
-                key={index}
-                className='h-4 rounded bg-gray-200 dark:bg-gray-700'
-                style={{ width: `${70 + (index * 5)}%` }}
-              />
-            ))}
-          </div>
-        </div>
-      ) : (
-        <nav className='hidden lg:block'>
-          <div className='fixed top-1/2 max-h-[calc(100vh-8rem)] w-56 -translate-y-1/2 overflow-auto pr-4 transition-all duration-300 ease-in-out'>
-            <h3 className='mb-4 text-center text-xl font-bold text-gray-900 dark:text-gray-100 pointer-events-none'>
-              Table of Contents
-            </h3>
-            <ul className='space-y-2 text-base'>
-              {headings.map((heading) => (
-                <li
-                  key={heading.id}
-                  style={{ paddingLeft: `${(heading.level - 2) * 1}rem` }}
-                  className='transform transition-all duration-200 hover:translate-x-1'
+      <nav className='hidden lg:block'>
+        <div className='fixed top-1/2 max-h-[calc(100vh-8rem)] w-56 -translate-y-1/2 overflow-auto pr-4 transition-all duration-300 ease-in-out lg:-translate-x-6 2xl:left-[max(0px,calc(50%-52rem))] 2xl:translate-x-0'>
+          <h3 className='pointer-events-none mb-4 text-center text-xl font-bold text-gray-900 dark:text-gray-100'>
+            {isLoading ? '' : 'Table of Contents'}
+          </h3>
+          <ul className='space-y-2 text-base'>
+            {headings.map((heading) => (
+              <li
+                key={heading.id}
+                style={{ paddingLeft: `${(heading.level - 2) * 1}rem` }}
+                className='transform transition-all duration-200 hover:translate-x-1'
+              >
+                <a
+                  onClick={(e) => handleClick(e, heading.id)}
+                  href={`#${heading.id}`}
+                  className={`block rounded-lg py-1 text-center transition-all duration-200 hover:text-sky-600 ${
+                    activeId === heading.id
+                      ? 'font-medium text-sky-600'
+                      : 'text-gray-600 dark:text-gray-400'
+                  }`}
                 >
-                  <a
-                    onClick={(e) => handleClick(e, heading.id)}
-                    href={`#${heading.id}`}
-                    className={`block rounded-lg py-1 text-center transition-all duration-200 hover:text-sky-600 ${
-                      activeId === heading.id
-                        ? 'font-medium text-sky-600'
-                        : 'text-gray-600 dark:text-gray-400'
-                    }`}
-                  >
-                    {heading.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
-      )}
+                  {heading.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
     </nav>
   );
 }

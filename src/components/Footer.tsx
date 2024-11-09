@@ -1,7 +1,6 @@
 import { websiteMetaData } from '@/data/websiteMetaData';
 import Link from 'next/link';
 import Image from 'next/image';
-import biomodLogo from '@/data/biomodLogo.png';
 
 const Footer = () => {
   return (
@@ -34,11 +33,16 @@ const Footer = () => {
             </div>
           </div>
 
-          <Link href='https://biomod.net/' target='_blank' className='flex items-center'>
+          <Link
+            href='https://biomod.net/'
+            target='_blank'
+            className='flex items-center'
+          >
             <Image
-              src={biomodLogo}
+              src='/biomodlogo.png'
               alt='Biomod Logo'
               width={150}
+              height={40}
               className='object-contain brightness-0 invert'
             />
           </Link>

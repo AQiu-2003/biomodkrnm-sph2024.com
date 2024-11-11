@@ -7,7 +7,7 @@ export default function Image({
   ...props
 }: ComponentPropsWithoutRef<"img">) {
   return (
-    <div className="flex justify-center">
+    <div className="flex flex-col justify-center items-center">
       <NextImage
         src={src ?? ""}
         alt={alt ?? ""}
@@ -16,6 +16,7 @@ export default function Image({
         {...props}
         className="rounded-xl"
       />
+      {alt && <div className="text-lg font-bold -mt-4 text-center">{alt}</div>}
     </div>
   );
 }

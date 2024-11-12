@@ -25,7 +25,7 @@ export const teamMembers: TeamMember[] = [
     major: 'Radio Medicine',
     role: ['Team Leader', 'Video', 'Experiment'],
     comment: 'Those who follow the light will eventually be radiant',
-    email: 'yangyr2722@mails.jlu.edu.cn',
+    email: 'yangyf2722@mails.jlu.edu.cn',
     imageUrl: YunfanYangPhoto,
   },
   {

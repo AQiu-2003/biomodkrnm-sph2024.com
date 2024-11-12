@@ -1,4 +1,17 @@
+import Image from 'next/image';
+import HeadingWithTuntun from '@/components/headingWithTuntun';
+
 # Future
+
+
+<HeadingWithTuntun title='' mt={0}>
+  <Image
+    src='/tuntun/1.png'
+    width={100}
+    height={100}
+    className='absolute -top-[7rem] right-4 lg:w-32 lg:-top-[9rem]'
+  />
+</HeadingWithTuntun>
 
 In our project, there are several aspects could be improved and refined in the future work. First, the activation of Crimson Crusader currently requires two separate exposure to irradiation, like green light and X-rays, which limits its flexibility and practicality, particularly in environments where a green light source is unavailable. This limitation could reduce the overall effectiveness of this system. Second, the excitation efficiency of Crimson Crusader under X-ray irradiation may be insufficient, resulting in suboptimal production of ROS and consequently diminishing its ability to effectively kill tumor cells.
 
@@ -6,7 +19,7 @@ Moreover, AuNPs are surface-modified to enhance the ability of targeting, but th
 
 To address these challenges and enhance the efficacy and applicability of Crimson Crusader, we propose the following improvements:
 
-1. **Optimization of Nanomaterials for Direct Green Light Generation:** We aim to design a novel nanomaterial capable of generating  ROS directly induced by the green light under X-ray irradiation. One promising direction is to explore rare-earth metal-doped nanoparticles, such as yttrium-aluminum-garnet (YAG) or europium-doped nanoparticles, which can emit KillerRed-activatable green light upon X-ray excitation.
+1. **Optimization of Nanomaterials for Direct Green Light Generation:** We aim to design a novel nanomaterial capable of generating ROS directly induced by the green light under X-ray irradiation. One promising direction is to explore rare-earth metal-doped nanoparticles, such as yttrium-aluminum-garnet (YAG) or europium-doped nanoparticles, which can emit KillerRed-activatable green light upon X-ray excitation.
 2. **Optimization of KillerRed:** We propose to modify the structure of KillerRed to increase its sensitivity under new excitation conditions, and to combine it with X-ray-sensitive nanomaterials to create a composite system that improves the efficiency of ROS generation.
 3. **Enhancement of Tumor Targeting:** The targeting efficiency of the nano-complex can be improved by functionalizing the surface of AuNPsusing tumor cell-specific antibodies or ligands, which would enhance their selective binding to tumor cells.
 4. **Toxicity Assessment:** A detailed evaluation of the potential toxic effects of the composite materials on the normal tissues is essential. This will involve control experiments with different normal cell types, and perform the cell survival rates, ROS levels, and apoptosis rates to ensure the safety of the new materials.

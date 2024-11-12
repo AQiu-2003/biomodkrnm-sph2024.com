@@ -1,11 +1,14 @@
-import TeamMemberCard from '@/components/TeamMemberCard';
+'use client';
+
 import MentorCard from '@/components/MentorCard';
-import { teamMembers } from '@/data/teamInfo';
+import TeamMemberCard from '@/components/TeamMemberCard';
 import { professors, seniors } from '@/data/mentorInfo';
-import Image from 'next/image';
-import * as motion from 'framer-motion/client';
-import { Righteous } from 'next/font/google';
+import { teamMembers } from '@/data/teamInfo';
 import teamPhoto from '@/data/teamPhoto.jpeg';
+import { motion, useInView } from 'framer-motion';
+import { Righteous } from 'next/font/google';
+import Image from 'next/image';
+import { useRef } from 'react';
 
 const righteous = Righteous({
   weight: '400',
@@ -13,6 +16,20 @@ const righteous = Righteous({
 });
 
 export default function TeamPage() {
+  const teamMembersRef = useRef(null);
+  const professorsRef = useRef(null);
+  const seniorsRef = useRef(null);
+
+  const teamMembersInView = useInView(teamMembersRef, {
+    once: true,
+    amount: 0.2,
+  });
+  const professorsInView = useInView(professorsRef, {
+    once: true,
+    amount: 0.2,
+  });
+  const seniorsInView = useInView(seniorsRef, { once: true, amount: 0.2 });
+
   return (
     <div className='mb-12 flex min-h-screen flex-col items-center justify-center'>
       <div className='relative h-[400px] w-full overflow-hidden rounded-lg lg:h-[800px]'>
@@ -61,13 +78,18 @@ export default function TeamPage() {
         Team Members
       </motion.h1>
 
-      <div className='mt-8 grid w-full max-w-[90rem] grid-cols-1 justify-items-center gap-6 px-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+      <div
+        ref={teamMembersRef}
+        className='mt-8 grid w-full max-w-[90rem] grid-cols-1 justify-items-center gap-6 px-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
+      >
         {teamMembers.map((member, index) => (
           <motion.div
             key={index}
             className='w-full max-w-sm'
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={
+              teamMembersInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
             transition={{
               opacity: { delay: index * 0.2, duration: 0.5 },
               y: { delay: index * 0.2, duration: 0.5 },
@@ -101,13 +123,18 @@ export default function TeamPage() {
       </motion.h1>
 
       <h2 className='mt-8 text-3xl font-semibold'>Professors</h2>
-      <div className='mt-6 grid w-full max-w-[90rem] grid-cols-2 justify-items-center gap-6 px-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+      <div
+        ref={professorsRef}
+        className='mt-6 grid w-full max-w-[90rem] grid-cols-2 justify-items-center gap-6 px-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'
+      >
         {professors.map((mentor, index) => (
           <motion.div
             key={index}
             className='w-full max-w-sm'
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={
+              professorsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
             transition={{
               opacity: { delay: index * 0.2, duration: 0.5 },
               y: { delay: index * 0.2, duration: 0.5 },
@@ -127,13 +154,18 @@ export default function TeamPage() {
       </div>
 
       <h2 className='mt-12 text-3xl font-semibold'>Seniors</h2>
-      <div className='mt-6 grid w-full max-w-[90rem] grid-cols-2 justify-items-center gap-6 px-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+      <div
+        ref={seniorsRef}
+        className='mt-6 grid w-full max-w-[90rem] grid-cols-2 justify-items-center gap-6 px-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'
+      >
         {seniors.map((mentor, index) => (
           <motion.div
             key={index}
             className='w-full max-w-sm'
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={
+              seniorsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+            }
             transition={{
               opacity: { delay: index * 0.2, duration: 0.5 },
               y: { delay: index * 0.2, duration: 0.5 },

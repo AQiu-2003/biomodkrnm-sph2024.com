@@ -99,11 +99,11 @@ export default function TableOfContents() {
   return (
     <nav className='hidden lg:block'>
       <nav className='hidden lg:block'>
-        <div className='fixed top-1/2 max-h-[calc(100vh-8rem)] w-56 -translate-y-1/2 overflow-auto pr-4 transition-all duration-300 ease-in-out lg:-translate-x-6 2xl:left-[max(0px,calc(50%-52rem))] 2xl:translate-x-0'>
-          <h3 className='pointer-events-none mb-4 text-center text-xl font-bold text-gray-900 dark:text-gray-100'>
+        <div className='fixed top-1/2 max-h-[calc(100vh-8rem)] w-56 -translate-y-1/2 overflow-auto pr-4 transition-all duration-300 ease-in-out lg:-translate-x-9 xl:-translate-x-16 2xl:left-[max(0px,calc(50%-52rem))] 2xl:translate-x-0'>
+          <h3 className='pointer-events-none mb-4 text-center text-2xl font-bold text-gray-900 dark:text-gray-100'>
             {isLoading ? '' : 'Table of Contents'}
           </h3>
-          <ul className='space-y-2 text-base'>
+          <ul className='space-y-2 text-xl'>
             {headings.map((heading) => (
               <li
                 key={heading.id}

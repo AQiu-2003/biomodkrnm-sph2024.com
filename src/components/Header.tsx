@@ -4,12 +4,12 @@ import { headerNavItems } from '@/data/headerConfig';
 import { websiteMetaData } from '@/data/websiteMetaData';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
-import { Righteous } from 'next/font/google';
+import { Do_Hyeon } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const righteous = Righteous({
+const doHyeon = Do_Hyeon({
   weight: '400',
   subsets: ['latin'],
 });
@@ -27,10 +27,10 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-sky-900 bg-opacity-80 shadow-md backdrop-blur-md dark:bg-sky-950 ${righteous.className}`}
+      className={`sticky top-0 z-50 bg-sky-900 bg-opacity-80 shadow-md backdrop-blur-md dark:bg-sky-950 ${doHyeon.className}`}
     >
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between py-2 lg:py-4'>
+        <div className='flex items-center justify-between py-4'>
           <Link className='flex items-center' href='/'>
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
@@ -50,7 +50,7 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
               />
             </motion.div>
             <motion.div
-              className={`${righteous.className} ml-2 text-center text-2xl font-bold text-white drop-shadow-lg`}
+              className={`${doHyeon.className} ml-4 text-center text-3xl font-bold text-white drop-shadow-lg`}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -75,7 +75,7 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`text-xl font-medium tracking-widest ${
+                      className={`text-2xl font-medium tracking-widest ${
                         isActive(item.href)
                           ? 'border-b-2 border-sky-200 text-sky-200'
                           : 'widest text-white hover:text-gray-300 dark:text-gray-300 dark:hover:text-white'
@@ -93,7 +93,7 @@ export default function Header({ setMobileMenuOpen }: HeaderProps) {
                 onClick={() => setMobileMenuOpen(true)}
               >
                 <span className='sr-only'>Open main menu</span>
-                <Bars3Icon className='h-6 w-6' aria-hidden='true' />
+                <Bars3Icon className='h-8 w-8' aria-hidden='true' />
               </button>
             </div>
           </div>

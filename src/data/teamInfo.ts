@@ -22,7 +22,7 @@ export const teamMembers: TeamMember[] = [
   {
     name1: 'Yunfan Yang',
     name2: '杨云帆',
-    major: 'Radio Medicine',
+    major: 'Radiation Medicine',
     role: ['Team Leader', 'Video', 'Experiment'],
     comment: 'Those who follow the light will eventually be radiant',
     email: 'yangyf2722@mails.jlu.edu.cn',
@@ -31,7 +31,7 @@ export const teamMembers: TeamMember[] = [
   {
     name1: 'Fei Fang',
     name2: '方霏',
-    major: 'Radio Medicine',
+    major: 'Radiation Medicine',
     role: ['Experiment'],
     comment: 'Traveling mountains and rivers, the world is worth it.',
     email: 'fangfei2723@mails.jlu.edu.cn',

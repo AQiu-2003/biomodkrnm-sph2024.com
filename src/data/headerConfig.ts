@@ -48,8 +48,12 @@ export const headerNavItems: HeaderNavItem[] = [
         href: "/design#overview",
       },
       {
-        name: "Gold nanoparticles (AuNPs)",
-        href: "/design#gold-nanoparticles-aunps",
+        name: "Gold nanoparticles",
+        href: "/design#gold-nanoparticles",
+      },
+      {
+        name: "Pink1-mtKR plasmid",
+        href: "/design#pink1-mtkr-plasmid",
       },
       {
         name: "Crimson Crusader",

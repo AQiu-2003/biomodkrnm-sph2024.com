@@ -15,6 +15,8 @@ export default function TableOfContents() {
   const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
 
+  const hideTableOfContents = pathname === '/experiment';
+
   // 处理点击事件
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -95,6 +97,10 @@ export default function TableOfContents() {
       clearTimeout(timer);
     };
   }, [pathname]);
+
+  if (hideTableOfContents) {
+    return null;
+  }
 
   return (
     <nav className='hidden lg:block'>

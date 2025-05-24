@@ -3,10 +3,10 @@ import Footer from '@/components/Footer';
 import LayoutWrapper from '@/components/LayoutWrapper';
 import ParticlesBackground from '@/components/ParticlesBackground';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
-import { ThemeProvider } from '@/components/ThemeProvider';
 import ThemeToggle from '@/components/ThemeToggle';
 import { websiteMetaData } from '@/data/websiteMetaData';
 import { Metadata } from 'next';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { Roboto } from 'next/font/google';
 import './globals.css';
 
@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={roboto.className}>
         <ParticlesBackground />
-        <ThemeProvider attribute='class' defaultTheme='light' enableSystem>
+        <NextThemesProvider attribute='class' defaultTheme='light' enableSystem>
           <div className='flex min-h-screen flex-col bg-sky-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100'>
             <LayoutWrapper>
               <main className='mx-auto mt-10 max-w-7xl flex-grow px-4 sm:px-6 lg:px-8'>
@@ -61,7 +61,7 @@ export default function RootLayout({
               <ThemeToggle />
             </FixedBottomRightWrapper>
           </div>
-        </ThemeProvider>
+        </NextThemesProvider>
       </body>
     </html>
   );
